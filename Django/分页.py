@@ -1,3 +1,4 @@
+#by:hankli
 class PageInfo(object):
     def __init__(self, current_page, per_page_num, all_count, url, show_page=11):
         '''
