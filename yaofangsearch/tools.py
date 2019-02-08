@@ -13,10 +13,17 @@ for item in file_list:
         name_list.append(file_name)
 #分割JPG文件,获取时间戳和姓名
 for temp in name_list:
-    # time,name = temp.split(str.isdigit())
-    name = re.findall(r'[\u4e00-\u9fa5][\u4e00-\u9fa5]',temp) #匹配人名
-    num = re.findall(r'\d+',temp)
+    num = re.findall(r'\d+', temp)
     gender = temp[-1:]
+    print(temp)
+    print(num)
+    print('gender' + gender)
+    # name = re.findall(r'[\u4e00-\u9fa5][\u4e00-\u9fa5]',temp) #匹配人名
+    name_all = re.findall(r'[\u4e00-\u9fa5]+',temp) #匹配人名
+
+    name = name_all[0][0:len(name_all[0])]
+
+    print(name)
     st = time.localtime(int(num[0]))
     date = time.strftime('%Y-%m-%d', st) #时间戳转时间
 
